@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Tracker — Your All-in-One Personal Organizer</title>
+    <meta name="description"
+        content="A thoughtful, human-designed tracker for tasks, habits, goals, expenses, and anything else life throws at you." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/variables.css" />
+    <link rel="stylesheet" href="src/styles/base.css" />
+    <link rel="stylesheet" href="src/styles/components.css" />
+    <link rel="stylesheet" href="src/styles/layout.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">◉</span>
+                    <span class="logo-text">Life Tracker</span>
+                </div>
+                <button id="sidebar-close" class="btn-icon sidebar-close" aria-label="Close menu">✕</button>
+            </div>
+
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">☀</span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="#entries" class="nav-item" data-view="entries">
+                    <span class="nav-icon">☰</span>
+                    <span class="nav-label">All Entries</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-view="analytics">
+                    <span class="nav-icon">◔</span>
+                    <span class="nav-label">Analytics</span>
+                </a>
+
+                <div class="nav-divider"></div>
+                <div class="nav-section-title">Your Trackers</div>
+                <div id="tracker-nav-list"></div>
+
+                <div class="nav-divider"></div>
+                <a href="#settings" class="nav-item" data-view="settings">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile sidebar -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main content -->
+        <main id="main-content" class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="btn-icon menu-toggle" aria-label="Open menu">☰</button>
+                <h1 id="page-title" class="page-title">Dashboard</h1>
+                <div class="topbar-actions">
+                    <button id="quick-add-btn" class="btn btn-primary btn-quick-add">
+                        <span>+</span> New Entry
+                    </button>
+                </div>
+            </header>
+
+            <div id="view-container" class="view-container">
+                <!-- Views rendered here -->
+            </div>
+        </main>
+
+        <!-- Toast container -->
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- Modal container -->
+        <div id="modal-overlay" class="modal-overlay" hidden>
+            <div id="modal-content" class="modal-content" role="dialog" aria-modal="true">
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts (order matters) -->
+    <script src="src/utils/dom.js"></script>
+    <script src="src/utils/dates.js"></script>
+    <script src="src/utils/search.js"></script>
+    <script src="src/data/models.js"></script>
+    <script src="src/data/store.js"></script>
+    <script src="src/data/export.js"></script>
+    <script src="src/components/Toast.js"></script>
+    <script src="src/components/Modal.js"></script>
+    <script src="src/components/ThemeToggle.js"></script>
+    <script src="src/components/Sidebar.js"></script>
+    <script src="src/views/EntryForm.js"></script>
+    <script src="src/views/Dashboard.js"></script>
+    <script src="src/views/EntriesList.js"></script>
+    <script src="src/views/Analytics.js"></script>
+    <script src="src/views/Settings.js"></script>
+    <script src="src/components/App.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>
