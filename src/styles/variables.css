@@ -1,0 +1,148 @@
+/* ===========================================
+   Design Tokens — The entire color/spacing/type system
+   Theme switching works by toggling data-theme on <html>
+   =========================================== */
+
+:root {
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-xs: 0.75rem;
+    --font-sm: 0.8125rem;
+    --font-base: 0.9375rem;
+    --font-md: 1.0625rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 1.875rem;
+    --font-3xl: 2.25rem;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Spacing */
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-5: 1.25rem;
+    --sp-6: 1.5rem;
+    --sp-8: 2rem;
+    --sp-10: 2.5rem;
+    --sp-12: 3rem;
+    --sp-16: 4rem;
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.07), 0 4px 10px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+
+    /* Layout */
+    --sidebar-width: 256px;
+    --topbar-height: 64px;
+    --max-content-width: 960px;
+
+    /* Accent palette — warm coral / peach */
+    --accent-h: 16;
+    --accent-s: 85%;
+}
+
+/* ---- LIGHT THEME ---- */
+[data-theme="light"] {
+    --bg-root: #f6f4f1;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #faf9f7;
+    --bg-surface-active: #f2f0ed;
+    --bg-muted: #f0eee9;
+    --bg-inset: #e8e5df;
+
+    --text-primary: #1a1814;
+    --text-secondary: #5c5650;
+    --text-tertiary: #8a8480;
+    --text-placeholder: #b5b0ab;
+    --text-inverse: #ffffff;
+
+    --border-light: #e8e5df;
+    --border-default: #d9d5ce;
+    --border-strong: #b5b0ab;
+
+    --accent: hsl(var(--accent-h), var(--accent-s), 55%);
+    --accent-hover: hsl(var(--accent-h), var(--accent-s), 48%);
+    --accent-soft: hsl(var(--accent-h), 60%, 94%);
+    --accent-text: hsl(var(--accent-h), var(--accent-s), 40%);
+
+    --success: #2d9a5c;
+    --success-soft: #e6f7ed;
+    --warning: #d9970a;
+    --warning-soft: #fdf5e0;
+    --danger: #d74a3a;
+    --danger-soft: #fdecea;
+    --info: #3a7fd7;
+    --info-soft: #e8f1fd;
+
+    --priority-high: #d74a3a;
+    --priority-medium: #d9970a;
+    --priority-low: #6b9e78;
+
+    --shadow-color: 30 10% 50%;
+}
+
+/* ---- DARK THEME ---- */
+[data-theme="dark"] {
+    --bg-root: #141210;
+    --bg-surface: #1e1c19;
+    --bg-surface-hover: #252320;
+    --bg-surface-active: #2c2a26;
+    --bg-muted: #252320;
+    --bg-inset: #1a1816;
+
+    --text-primary: #ede9e3;
+    --text-secondary: #a8a29e;
+    --text-tertiary: #78726c;
+    --text-placeholder: #5c5650;
+    --text-inverse: #1a1814;
+
+    --border-light: #2c2a26;
+    --border-default: #3a3733;
+    --border-strong: #5c5650;
+
+    --accent: hsl(var(--accent-h), 75%, 60%);
+    --accent-hover: hsl(var(--accent-h), 75%, 68%);
+    --accent-soft: hsl(var(--accent-h), 40%, 18%);
+    --accent-text: hsl(var(--accent-h), 70%, 70%);
+
+    --success: #3db870;
+    --success-soft: #1a2e22;
+    --warning: #e5a820;
+    --warning-soft: #2e2810;
+    --danger: #e65a4a;
+    --danger-soft: #2e1a18;
+    --info: #5a9ae6;
+    --info-soft: #1a2434;
+
+    --priority-high: #e65a4a;
+    --priority-medium: #e5a820;
+    --priority-low: #7db88a;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
